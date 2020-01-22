@@ -1,0 +1,11 @@
+1.fisier "templates"
+
+2. in settings.py:
+STATIC_ROOT = '/var/www/souldeux/static'
+STATICFILES_DIRS = (
+	os.path.join(BASE_DIR, "static"),
+	)
+
++  mkdir static in fisierul cu manage.py
+
++ mkdir djangonote in fisierul "static"

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+
+<br>
+<br>
+<div class="jumbotron">
+	<h1 align='center'>My Notes</h1>
+</div>
+
+
+<div class='col-md-12'>
+{% if notes %}
+	{% for note in notes %}
+<!--	<h4 class="page-header" >{{note.text}}</h4>-->
+	<h4>{{note.timestamp}}</h4>
+	<h3>{{note.text|linebreaks}}</h3>
+	<h4><a href="{% url 'notes:addnote' %}?id={{note.id}}">Edit</a></h4>
+	<br>
+	{% endfor %}
+{% else %}
+	<div class='alert alert-warning' align='center'>
+		<h3>No Notes Yet!</h3>
+	</div>
+{% endif %}
+</div>
+
+
+{% endblock body %}
